@@ -14,6 +14,8 @@ FILES+=("${CWD_BASENAME}.php")
 FILES+=("README.md")
 FILES+=("translations/**")
 FILES+=("views/**")
+FILES+=("opcache/**")
+
 
 MODULE_VERSION="$(sed -ne "s/\\\$this->version *= *['\"]\([^'\"]*\)['\"] *;.*/\1/p" ${CWD_BASENAME}.php)"
 MODULE_VERSION=${MODULE_VERSION//[[:space:]]}

@@ -17,5 +17,5 @@
  *}
 
 <div class="panel">
-        <iframe src="../modules/opcachemanager/opcache/" style="width:100%;height:600px">
+        <iframe src="{$module_dir|escape:'htmlall':'UTF-8'}opcache/" style="width:100%;height:600px">
 </div>
