@@ -1,0 +1,14 @@
+module_name: OpCache Manager
+compatible_versions: 1.0.0+
+author: thirty bees
+category: administration
+tags:
+  - opcache
+  - speed
+  - cache
+  - php
+description_short: The OpCache manager module allows you to view and manage your site's Opcache
+description: description.md
+images:
+  - image-1.png
+license: AFL
