@@ -57,7 +57,7 @@ class Configuration
 
         $memory_consumption = $this->byteFormatter->format($directives['opcache.memory_consumption']);
 
-        return [
+        $ret = [
             'opcache.enable'                  => $directives['opcache.enable'],
             'opcache.enable_cli'              => $directives['opcache.enable_cli'],
             'opcache.use_cwd'                 => $directives['opcache.use_cwd'],
@@ -79,11 +79,30 @@ class Configuration
             'opcache.error_log'               => $directives['opcache.error_log'],
             'opcache.protect_memory'          => $directives['opcache.protect_memory'],
             'opcache.save_comments'           => $directives['opcache.save_comments'],
-            'opcache.load_comments'           => $directives['opcache.load_comments'],
-            'opcache.fast_shutdown'           => $directives['opcache.fast_shutdown'],
             'opcache.enable_file_override'    => $directives['opcache.enable_file_override'],
             'opcache.optimization_level'      => $directives['opcache.optimization_level'],
         ];
+
+        if (version_compare(phpversion(), '7.0.0', '<')) {
+            $ret['opcache.load_comments'] = $directives['opcache.load_comments'];
+        } else {
+            $ret['opcache.file_cache'] = $directives['opcache.file_cache'];
+            $ret['opcache.file_cache_consistency_checks'] = $directives['opcache.file_cache_consistency_checks'];
+            if (isset($directives['opcache.file_cache_fallback'])) {
+                $ret['opcache.file_cache_fallback'] = $directives['opcache.file_cache_fallback'];
+            }
+
+            if (version_compare(phpversion(), '7.0.14', '>=')) {
+                $ret['opcache.validate_permission'] = $directives['opcache.validate_permission'];
+                $ret['opcache.validate_root'] = $directives['opcache.validate_root'];
+            }
+        }
+        if (version_compare(phpversion(), '7.2.0', '<')) {
+            $ret['opcache.fast_shutdown'] = $directives['opcache.fast_shutdown'];
+        }
+
+
+        return $ret;
     }
 
     /**
