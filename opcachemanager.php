@@ -35,7 +35,7 @@ class OpcacheManager extends Module
     {
         $this->name = 'opcachemanager';
         $this->tab = 'administration';
-        $this->version = '1.0.2';
+        $this->version = '1.0.3';
         $this->author = 'thirty bees';
         $this->bootstrap = true;
         parent::__construct();
