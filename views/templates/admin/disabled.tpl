@@ -17,7 +17,14 @@
  *}
 
 <div class="panel">
-    <div class="row moduleconfig-header">
-           <h1> It looks like you do not have OpCache running on your server</h1>
-    </div>
+  <div class="row moduleconfig-header">
+    <h1>{l s='Unable to retrieve OPCache status' mod='opcachemanager'}</h1>
+    <p>{l s='It looks like you do not have OPCache running on your server or one of the following functions has been disabled:' mod='opcachemanager'}</p>
+    <ul>
+      <li><kbd>opcache_reset</kbd></li>
+      <li><kbd>opcache_invalidate</kbd></li>
+      <li><kbd>opcache_get_configuration</kbd></li>
+      <li><kbd>opcache_get_status</kbd></li>
+    </ul>
+  </div>
 </div>

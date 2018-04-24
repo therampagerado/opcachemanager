@@ -54,7 +54,7 @@ class OpcacheManager extends Module
             'module_dir' => $this->_path,
         ]);
 
-        if (function_exists('opcache_get_configuration')) {
+        if (function_exists('opcache_get_configuration') && function_exists('opcache_get_status')) {
             return $this->display(__FILE__, '/views/templates/admin/enabled.tpl');
         } else {
             return $this->display(__FILE__, '/views/templates/admin/disabled.tpl');
