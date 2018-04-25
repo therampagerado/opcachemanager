@@ -16,5 +16,5 @@
  * @license   http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  *}
 <div class="panel">
-  <iframe src="{$module_dir|escape:'htmlall':'UTF-8'}opcache/" style="width:100%;height:600px" seamless="seamless">
+  <iframe src="{$module_dir|escape:'htmlall':'UTF-8'}opcache/" style="width:100%;height:600px" frameborder="0">
 </div>
