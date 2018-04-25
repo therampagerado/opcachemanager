@@ -1,4 +1,9 @@
 <?php
+if (!defined('_TB_VERSION_')) {
+    exit;
+}
+?>
+<?php
 $status = new OpCacheGUI\OpCache\Status($this->byteFormatter, $this->translator, opcache_get_status());
 
 $memoryInfo = $status->getMemoryInfo();

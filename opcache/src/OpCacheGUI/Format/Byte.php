@@ -11,7 +11,12 @@
  * @license    http://www.opensource.org/licenses/mit-license.html  MIT License
  * @version    1.0.0
  */
+
 namespace OpCacheGUI\Format;
+
+if (!defined('_TB_VERSION_')) {
+    exit;
+}
 
 /**
  * Formatter for byte values
@@ -37,13 +42,13 @@ class Byte
 
         do {
             if ($size < 1024) {
-                return round($size, $decimals) . $units[$position];
+                return round($size, $decimals).$units[$position];
             }
 
             $size = $size / 1024;
             $position++;
         } while ($position < count($units));
 
-        return round($size, $decimals) . end($units);
+        return round($size, $decimals).end($units);
     }
 }

@@ -11,9 +11,14 @@
  * @license    http://www.opensource.org/licenses/mit-license.html  MIT License
  * @version    1.0.0
  */
+
 namespace OpCacheGUI\OpCache;
 
 use OpCacheGUI\Format\Byte;
+
+if (!defined('_TB_VERSION_')) {
+    exit;
+}
 
 /**
  * Container for the configuration of OpCache
@@ -43,7 +48,7 @@ class Configuration
     public function __construct(Byte $byteFormatter, array $configData)
     {
         $this->byteFormatter = $byteFormatter;
-        $this->configData    = $configData;
+        $this->configData = $configData;
     }
 
     /**

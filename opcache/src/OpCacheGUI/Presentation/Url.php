@@ -11,9 +11,14 @@
  * @license    http://www.opensource.org/licenses/mit-license.html  MIT License
  * @version    1.0.0
  */
+
 namespace OpCacheGUI\Presentation;
 
 use OpCacheGUI\Network\Router;
+
+if (!defined('_TB_VERSION_')) {
+    exit;
+}
 
 /**
  * Class for rendering urls to be easily able to switch between clean urls and querystrings
@@ -68,7 +73,7 @@ class Url implements UrlRenderer
             return '..';
         }
 
-        return '/' . $identifier;
+        return '/'.$identifier;
     }
 
     /**
@@ -84,6 +89,6 @@ class Url implements UrlRenderer
             return '?';
         }
 
-        return '?' . $identifier;
+        return '?'.$identifier;
     }
 }

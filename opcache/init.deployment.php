@@ -11,4 +11,8 @@
  * @version    1.0.0
  */
 
+if (!defined('_TB_VERSION_')) {
+    exit;
+}
+
 require_once __DIR__ . '/init.example.php';

@@ -11,7 +11,12 @@
  * @license    http://www.opensource.org/licenses/mit-license.html  MIT License
  * @version    1.0.0
  */
+
 namespace OpCacheGUI\Storage;
+
+if (!defined('_TB_VERSION_')) {
+    exit;
+}
 
 /**
  * Session class
@@ -46,7 +51,7 @@ class Session implements KeyValuePair, Regeneratable
     public function get($key)
     {
         if (!$this->isKeyValid($key)) {
-            throw new InvalidKeyException('Key (`' . $key . '`) not found in session.');
+            throw new InvalidKeyException('Key (`'.$key.'`) not found in session.');
         }
 
         return $_SESSION[$key];

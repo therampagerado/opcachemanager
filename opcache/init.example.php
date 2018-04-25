@@ -21,6 +21,10 @@ namespace OpCacheGUI;
 use OpCacheGUI\I18n\FileTranslator;
 use OpCacheGUI\Network\Router;
 
+if (!defined('_TB_VERSION_')) {
+    exit;
+}
+
 /**
  * Setup error reporting
  */

@@ -1,5 +1,9 @@
 <?php
 
+if (!defined('_TB_VERSION_')) {
+    exit;
+}
+
 use OpCacheGUI\Network\Router;
 
 $router->get('mainjs', function() {

@@ -11,7 +11,12 @@
  * @license    http://www.opensource.org/licenses/mit-license.html  MIT License
  * @version    1.0.0
  */
+
 namespace OpCacheGUI\Format;
+
+if (!defined('_TB_VERSION_')) {
+    exit;
+}
 
 /**
  * Trims the common prefix from the full_path index of cached scripts
@@ -77,7 +82,7 @@ class Prefix implements Trimmer
     private function findLongestPrefix($prefix, $path)
     {
         $prefixChars = str_split(str_replace('\\', '/', $prefix));
-        $pathChars   = str_split(str_replace('\\', '/', $path));
+        $pathChars = str_split(str_replace('\\', '/', $path));
 
         $lastSlash = 0;
 

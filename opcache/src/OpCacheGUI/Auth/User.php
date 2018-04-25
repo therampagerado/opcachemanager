@@ -11,9 +11,14 @@
  * @license    http://www.opensource.org/licenses/mit-license.html  MIT License
  * @version    1.0.0
  */
+
 namespace OpCacheGUI\Auth;
 
 use OpCacheGUI\Storage\Session;
+
+if (!defined('_TB_VERSION_')) {
+    exit;
+}
 
 /**
  * Handles user authentication
@@ -54,9 +59,9 @@ class User
     public function __construct(Session $sessionStorage, $username, $password, Whitelist $whitelist)
     {
         $this->sessionStorage = $sessionStorage;
-        $this->username       = strtolower($username);
-        $this->password       = $password;
-        $this->whitelist      = $whitelist;
+        $this->username = strtolower($username);
+        $this->password = $password;
+        $this->whitelist = $whitelist;
     }
 
     /**

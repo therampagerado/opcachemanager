@@ -12,7 +12,12 @@
  * @license    http://www.opensource.org/licenses/mit-license.html  MIT License
  * @version    1.0.0
  */
+
 namespace OpCacheGUI\Security\Generator;
+
+if (!defined('_TB_VERSION_')) {
+    exit;
+}
 
 /**
  * Exception which gets thrown when the factory tries to build an invalid generator

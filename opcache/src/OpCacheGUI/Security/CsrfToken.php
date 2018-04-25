@@ -11,12 +11,17 @@
  * @license    http://www.opensource.org/licenses/mit-license.html  MIT License
  * @version    1.0.0
  */
+
 namespace OpCacheGUI\Security;
 
-use OpCacheGUI\Storage\KeyValuePair;
 use OpCacheGUI\Security\Generator\Builder;
-use OpCacheGUI\Security\Generator\UnsupportedAlgorithmException;
 use OpCacheGUI\Security\Generator\InvalidLengthException;
+use OpCacheGUI\Security\Generator\UnsupportedAlgorithmException;
+use OpCacheGUI\Storage\KeyValuePair;
+
+if (!defined('_TB_VERSION_')) {
+    exit;
+}
 
 /**
  * CSRF token
@@ -130,13 +135,13 @@ class CsrfToken
         if (strlen($buffer) < $length) {
             throw new InvalidLengthException(
                 'The generated token didn\'t met the required length (`'
-                . $length
-                . '`). Actual length is: `'
-                . strlen($buffer)
-                . '`.'
+                .$length
+                .'`). Actual length is: `'
+                .strlen($buffer)
+                .'`.'
             );
         }
 
-        return str_replace(array('+', '"', '\'', '\\', '/', '=', '?', '&'), '', base64_encode($buffer));
+        return str_replace(['+', '"', '\'', '\\', '/', '=', '?', '&'], '', base64_encode($buffer));
     }
 }

@@ -13,7 +13,12 @@
  * @license    http://www.opensource.org/licenses/mit-license.html  MIT License
  * @version    1.0.0
  */
+
 namespace OpCacheGUI\Storage;
+
+if (!defined('_TB_VERSION_')) {
+    exit;
+}
 
 /**
  * Interface for class that can regenerate a state id (like sessions)

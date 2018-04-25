@@ -11,11 +11,16 @@
  * @license    http://www.opensource.org/licenses/mit-license.html  MIT License
  * @version    1.0.0
  */
+
 namespace OpCacheGUI\OpCache;
 
 use OpCacheGUI\Format\Byte;
-use OpCacheGUI\I18n\Translator;
 use OpCacheGUI\Format\Trimmer;
+use OpCacheGUI\I18n\Translator;
+
+if (!defined('_TB_VERSION_')) {
+    exit;
+}
 
 /**
  * Container for the current status of OpCache
@@ -30,8 +35,8 @@ class Status
      * @var string The colors of the graphs
      */
     const DARK_GREEN = '#16a085';
-    const RED        = '#e74c3c';
-    const GREEN      = '#2ecc71';
+    const RED = '#e74c3c';
+    const GREEN = '#2ecc71';
 
     /**
      * @var \OpCacheGUI\Format\Byte Formatter of byte values
@@ -58,8 +63,8 @@ class Status
     public function __construct(Byte $byteFormatter, Translator $translator, array $statusData)
     {
         $this->byteFormatter = $byteFormatter;
-        $this->translator    = $translator;
-        $this->statusData    = $statusData;
+        $this->translator = $translator;
+        $this->statusData = $statusData;
     }
 
     /**
@@ -90,7 +95,7 @@ class Status
             'used_memory'               => $this->byteFormatter->format($memory['used_memory']),
             'free_memory'               => $this->byteFormatter->format($memory['free_memory']),
             'wasted_memory'             => $this->byteFormatter->format($memory['wasted_memory']),
-            'current_wasted_percentage' => round($memory['current_wasted_percentage'], 2) . '%',
+            'current_wasted_percentage' => round($memory['current_wasted_percentage'], 2).'%',
         ];
     }
 
@@ -130,8 +135,8 @@ class Status
     public function getStatsInfo()
     {
         if (!$this->statusData['opcache_enabled']) {
-             return [
-                 [
+            return [
+                [
                     'num_cached_scripts'   => 0,
                     'num_cached_keys'      => 0,
                     'max_cached_keys'      => 0,
@@ -139,15 +144,15 @@ class Status
                     'misses'               => 0,
                     'blacklist_misses'     => 0,
                     'blacklist_miss_ratio' => 'n/a',
-                 ],
-                 [
-                    'opcache_hit_rate'     => 'n/a',
-                    'start_time'           => 'n/a',
-                    'last_restart_time'    => 'n/a',
-                    'oom_restarts'         => 'n/a',
-                    'hash_restarts'        => 'n/a',
-                    'manual_restarts'      => 'n/a',
-                 ],
+                ],
+                [
+                    'opcache_hit_rate'  => 'n/a',
+                    'start_time'        => 'n/a',
+                    'last_restart_time' => 'n/a',
+                    'oom_restarts'      => 'n/a',
+                    'hash_restarts'     => 'n/a',
+                    'manual_restarts'   => 'n/a',
+                ],
             ];
         }
 
@@ -156,7 +161,7 @@ class Status
         $lastRestartTime = null;
 
         if ($stats['last_restart_time']) {
-            $lastRestartTime = (new \DateTime('@' . $stats['last_restart_time']))->format('H:i:s d-m-Y');
+            $lastRestartTime = (new \DateTime('@'.$stats['last_restart_time']))->format('H:i:s d-m-Y');
         }
 
         return [
@@ -170,12 +175,12 @@ class Status
                 'blacklist_miss_ratio' => round($stats['blacklist_miss_ratio'], 2),
             ],
             [
-                'opcache_hit_rate'     => round($stats['opcache_hit_rate'], 2) . '%',
-                'start_time'           => (new \DateTime('@' . $stats['start_time']))->format('H:i:s d-m-Y'),
-                'last_restart_time'    => $lastRestartTime,
-                'oom_restarts'         => $stats['oom_restarts'],
-                'hash_restarts'        => $stats['hash_restarts'],
-                'manual_restarts'      => $stats['manual_restarts'],
+                'opcache_hit_rate'  => round($stats['opcache_hit_rate'], 2).'%',
+                'start_time'        => (new \DateTime('@'.$stats['start_time']))->format('H:i:s d-m-Y'),
+                'last_restart_time' => $lastRestartTime,
+                'oom_restarts'      => $stats['oom_restarts'],
+                'hash_restarts'     => $stats['hash_restarts'],
+                'manual_restarts'   => $stats['manual_restarts'],
             ],
         ];
     }
@@ -257,14 +262,14 @@ class Status
             $timestamp = 'N/A';
 
             if (isset($script['timestamp'])) {
-                $timestamp = (new \DateTime('@' . $script['timestamp']))->format('H:i:s d-m-Y');
+                $timestamp = (new \DateTime('@'.$script['timestamp']))->format('H:i:s d-m-Y');
             }
 
             $scripts[] = [
                 'full_path'           => $script['full_path'],
                 'hits'                => $script['hits'],
                 'memory_consumption'  => $this->byteFormatter->format($script['memory_consumption']),
-                'last_used_timestamp' => (new \DateTime('@' . $script['last_used_timestamp']))->format('H:i:s d-m-Y'),
+                'last_used_timestamp' => (new \DateTime('@'.$script['last_used_timestamp']))->format('H:i:s d-m-Y'),
                 'timestamp'           => $timestamp,
             ];
         }

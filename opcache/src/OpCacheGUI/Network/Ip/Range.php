@@ -14,7 +14,12 @@
  * @license    http://www.opensource.org/licenses/mit-license.html  MIT License
  * @version    1.0.0
  */
+
 namespace OpCacheGUI\Network\Ip;
+
+if (!defined('_TB_VERSION_')) {
+    exit;
+}
 
 /**
  * IP range converter for a range

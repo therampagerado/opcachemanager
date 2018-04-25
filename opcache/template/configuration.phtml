@@ -1,4 +1,9 @@
-<?php $config = new OpCacheGUI\OpCache\Configuration($this->byteFormatter, opcache_get_configuration()); ?>
+<?php
+if (!defined('_TB_VERSION_')) {
+    exit;
+}
+
+$config = new OpCacheGUI\OpCache\Configuration($this->byteFormatter, opcache_get_configuration()); ?>
 <section id="configuration-tabs" class="tabs">
     <nav id="sub-nav">
         <ul>

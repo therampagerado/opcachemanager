@@ -11,7 +11,12 @@
  * @license    http://www.opensource.org/licenses/mit-license.html  MIT License
  * @version    1.0.0
  */
+
 namespace OpCacheGUI\I18n;
+
+if (!defined('_TB_VERSION_')) {
+    exit;
+}
 
 /**
  * Translator based on translation files containing an array with texts
@@ -38,17 +43,17 @@ class FileTranslator implements Translator
      */
     public function __construct($translationDirectory, $languageCode)
     {
-        $translationFile = $translationDirectory . '/' . $languageCode . '.php';
+        $translationFile = $translationDirectory.'/'.$languageCode.'.php';
 
         if (!file_exists($translationFile)) {
-            throw new \Exception('Unsupported language (`' . $languageCode . '`).');
+            throw new \Exception('Unsupported language (`'.$languageCode.'`).');
         }
 
         require $translationFile;
 
         if (!isset($texts)) {
             throw new \Exception(
-                'The translation file (`' . $translationFile . '`) has an invalid format.'
+                'The translation file (`'.$translationFile.'`) has an invalid format.'
             );
         }
 
@@ -68,6 +73,6 @@ class FileTranslator implements Translator
             return $this->texts[$key];
         }
 
-        return '{{' . $key . '}}';
+        return '{{'.$key.'}}';
     }
 }

@@ -11,9 +11,14 @@
  * @license    http://www.opensource.org/licenses/mit-license.html  MIT License
  * @version    1.0.0
  */
+
 namespace OpCacheGUI\Presentation;
 
 use OpCacheGUI\I18n\Translator;
+
+if (!defined('_TB_VERSION_')) {
+    exit;
+}
 
 /**
  * The class is responsible for rendering HTML templates
@@ -48,7 +53,7 @@ abstract class Template implements Renderer
     public function __construct($templateDirectory, Translator $translator)
     {
         $this->templateDirectory = $templateDirectory;
-        $this->translator        = $translator;
+        $this->translator = $translator;
     }
 
     /**

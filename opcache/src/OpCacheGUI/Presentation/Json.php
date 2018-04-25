@@ -11,7 +11,12 @@
  * @license    http://www.opensource.org/licenses/mit-license.html  MIT License
  * @version    1.0.0
  */
+
 namespace OpCacheGUI\Presentation;
+
+if (!defined('_TB_VERSION_')) {
+    exit;
+}
 
 /**
  * The class is responsible for rendering JSON templates
@@ -32,6 +37,6 @@ class Json extends Template
     {
         $this->variables = $data;
 
-        return require $this->templateDirectory . '/' . $template;
+        return require $this->templateDirectory.'/'.$template;
     }
 }

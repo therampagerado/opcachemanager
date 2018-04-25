@@ -11,7 +11,12 @@
  * @license    http://www.opensource.org/licenses/mit-license.html  MIT License
  * @version    1.0.0
  */
+
 namespace OpCacheGUI\Network;
+
+if (!defined('_TB_VERSION_')) {
+    exit;
+}
 
 /**
  * This class represents a single endpoint
@@ -47,8 +52,8 @@ class Route
     public function __construct($identifier, $verb, callable $callback)
     {
         $this->identifier = $identifier;
-        $this->verb       = $verb;
-        $this->callback   = $callback;
+        $this->verb = $verb;
+        $this->callback = $callback;
     }
 
     /**

@@ -11,7 +11,12 @@
  * @license    http://www.opensource.org/licenses/mit-license.html  MIT License
  * @version    1.0.0
  */
+
 namespace OpCacheGUI\Network;
+
+if (!defined('_TB_VERSION_')) {
+    exit;
+}
 
 /**
  * Simple request class
@@ -51,10 +56,10 @@ class Request implements RequestData
      */
     public function __construct(array $get, array $post, array $server)
     {
-        $this->getVariables    = $get;
-        $this->postVariables   = $post;
+        $this->getVariables = $get;
+        $this->postVariables = $post;
         $this->serverVariables = $server;
-        $this->pathVariables   = explode('/', trim($server['REQUEST_URI'], '/'));
+        $this->pathVariables = explode('/', trim($server['REQUEST_URI'], '/'));
     }
 
     /**
@@ -118,7 +123,7 @@ class Request implements RequestData
             $scheme .= 's';
         }
 
-        return $scheme . '://' . $this->serverVariables['HTTP_HOST'] . $this->serverVariables['REQUEST_URI'];
+        return $scheme.'://'.$this->serverVariables['HTTP_HOST'].$this->serverVariables['REQUEST_URI'];
     }
 
     /**

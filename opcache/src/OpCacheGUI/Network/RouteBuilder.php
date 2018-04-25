@@ -13,6 +13,10 @@
  */
 namespace OpCacheGUI\Network;
 
+if (!defined('_TB_VERSION_')) {
+    exit;
+}
+
 /**
  * Interface for route factories
  *

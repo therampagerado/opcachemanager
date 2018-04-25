@@ -11,7 +11,12 @@
  * @license    http://www.opensource.org/licenses/mit-license.html  MIT License
  * @version    1.0.0
  */
+
 namespace OpCacheGUI\Network;
+
+if (!defined('_TB_VERSION_')) {
+    exit;
+}
 
 /**
  * All requests are directed through this class and runs to correct route
@@ -25,7 +30,7 @@ class Router
     /**
      * @var int The types of URIs used by the system
      */
-    const URL_REWRITE  = 1;
+    const URL_REWRITE = 1;
     const QUERY_STRING = 2;
 
     /**
@@ -57,8 +62,8 @@ class Router
      */
     public function __construct(RequestData $request, RouteBuilder $routeFactory, $identifierType = self::URL_REWRITE)
     {
-        $this->request        = $request;
-        $this->routeFactory   = $routeFactory;
+        $this->request = $request;
+        $this->routeFactory = $routeFactory;
         $this->identifierType = $identifierType;
     }
 

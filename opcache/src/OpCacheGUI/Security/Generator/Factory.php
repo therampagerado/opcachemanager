@@ -12,7 +12,12 @@
  * @license    http://www.opensource.org/licenses/mit-license.html  MIT License
  * @version    1.0.0
  */
+
 namespace OpCacheGUI\Security\Generator;
+
+if (!defined('_TB_VERSION_')) {
+    exit;
+}
 
 /**
  * Factory which returns different generators
@@ -35,13 +40,13 @@ class Factory implements Builder
     public function build($class)
     {
         if (!class_exists($class)) {
-            throw new InvalidGeneratorException('Invalid random string generator (`' . $class . '`).');
+            throw new InvalidGeneratorException('Invalid random string generator (`'.$class.'`).');
         }
 
         $generator = new $class;
 
         if (!($generator instanceof \OpCacheGUI\Security\Generator)) {
-            throw new InvalidGeneratorException($class . ' does not implement generator.');
+            throw new InvalidGeneratorException($class.' does not implement generator.');
         }
 
         return $generator;
