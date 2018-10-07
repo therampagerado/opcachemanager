@@ -7,6 +7,7 @@ tags:
   - speed
   - cache
   - php
+  - opcachemanager
 description_short: The OpCache manager module allows you to view and manage your site's Opcache
 description: description.md
 images:
