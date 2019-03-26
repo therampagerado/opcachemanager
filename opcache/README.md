@@ -1,8 +1,6 @@
 OpCacheGUI
 ==========
 
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/PeeHaa/OpCacheGUI/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/PeeHaa/OpCacheGUI/?branch=master) [![Code Coverage](https://scrutinizer-ci.com/g/PeeHaa/OpCacheGUI/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/PeeHaa/OpCacheGUI/?branch=master) [![Build Status](https://scrutinizer-ci.com/g/PeeHaa/OpCacheGUI/badges/build.png?b=master)](https://scrutinizer-ci.com/g/PeeHaa/OpCacheGUI/build-status/master)
-
 GUI for PHP's OpCache. I started this project to see what you can do with PHP's OpCache. There are already a couple of projects who implement something like this, but they are either a "one file to rule them all" or just not very nice looking.
 
 If you are looking for a simple single file status GUI please see [Rasmus' one-page OpCache project][rasmus].
@@ -62,7 +60,7 @@ Timeline
 | Phase                                              | Start      | End        |
 | -------------------------------------------------- | ---------- | ---------- |
 | Finalize roadmap                                   | 22-05-2015 | 23-05-2015 |
-| Create v1.1.0 branch                               | 23-05-2015 | 23-05-2015 |     
+| Create v1.1.0 branch                               | 23-05-2015 | 23-05-2015 |
 | Development                                        | 23-05-2015 | 25-05-2015 |
 | RC1 release                                        | 25-05-2015 | 31-05-2015 |
 | Stable  (when no blocking issues are found in RC1) | 31-05-2015 | 31-05-2015 |
@@ -72,7 +70,7 @@ Timeline
 | Phase                                              | Start      | End        |
 | -------------------------------------------------- | ---------- | ---------- |
 | Finalize roadmap                                   | 23-05-2015 | 24-05-2015 |
-| Create v1.1.0 branch                               | 24-05-2015 | 24-05-2015 |     
+| Create v1.1.0 branch                               | 24-05-2015 | 24-05-2015 |
 | Development                                        | 01-06-2015 | 31-07-2015 |
 | RC1 release                                        | 01-08-2015 | 15-08-2015 |
 | RC2 release                                        | 15-08-2015 | 31-08-2015 |
