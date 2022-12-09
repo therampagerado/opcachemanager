@@ -38,6 +38,7 @@ class OpcacheManager extends Module
         $this->version = '1.0.3';
         $this->author = 'thirty bees';
         $this->bootstrap = true;
+        $this->need_instance = false;
         parent::__construct();
         $this->displayName = $this->l('thirty bees Opcache Manager');
         $this->description = $this->l('View and manage your Opcache directly from your back office');
