@@ -1,5 +1,16 @@
 <?php
 
+include_once('../../../config/config.inc.php');
+include_once('../../../init.php');
+
+$context = Context::getContext();
+$cookie = new Cookie('psAdmin', '', (int) Configuration::get('PS_COOKIE_LIFETIME_BO'));
+$employee = new Employee((int) $cookie->id_employee);
+
+if (!(Validate::isLoadedObject($employee) && $employee->checkPassword((int) $cookie->id_employee, $cookie->passwd) && (!isset($cookie->remote_addr) || $cookie->remote_addr == ip2long(Tools::getRemoteAddr()) || !Configuration::get('PS_COOKIE_CHECKIP')))) {
+    die('User is not logged in');
+}
+
 /**
  * OPcache GUI
  *

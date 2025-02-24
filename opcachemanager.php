@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (C) 2017-2024 thirty bees
+ * Copyright (C) 2017-2025 thirty bees
  *
  * NOTICE OF LICENSE
  *
@@ -13,7 +13,7 @@
  * to contact@thirtybees.com so we can send you a copy immediately.
  *
  * @author    thirty bees <contact@thirtybees.com>
- * @copyright 2017-2024 thirty bees
+ * @copyright 2017-2025 thirty bees
  * @license   https://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 
